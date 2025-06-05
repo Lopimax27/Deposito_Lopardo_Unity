@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public class CubeSpawner : MonoBehaviour
+public class BallSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _cubeprefab;
+    [SerializeField] private GameObject _ballprefab;
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private Color _color;
+    [SerializeField] private float _forceAmount;
+
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            GameObject cubeInstance = Instantiate(_cubeprefab, _spawnPoint.position, Quaternion.identity);
-            cubeInstance.GetComponent<Renderer>().material.color = _color;
+            GameObject ballInstance = Instantiate(_ballprefab, _spawnPoint.position, Quaternion.identity);
+            Rigidbody ballRigidbody = ballInstance.GetComponent<Rigidbody>();
+
+            ballRigidbody.AddForce(transform.forward * _forceAmount, ForceMode.Impulse);
         }
     }
 }

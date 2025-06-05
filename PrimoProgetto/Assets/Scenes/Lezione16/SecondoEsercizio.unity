@@ -200,7 +200,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2183031006524576111, guid: 8c98fbe38f60387409b02fff4ac1e673, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 844182897782026737, guid: 8c98fbe38f60387409b02fff4ac1e673, type: 3}
@@ -432,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c287df6aa519d4baadd0349ef9ad6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jump: 3
+  _jump: 5
   _rigidBody: {fileID: 547886674}
 --- !u!114 &547886680
 MonoBehaviour:
@@ -446,7 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f413c173c2ef44a94b22e734a8db0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 8
   _rigidBody: {fileID: 547886674}
 --- !u!1 &1225738032
 GameObject:
