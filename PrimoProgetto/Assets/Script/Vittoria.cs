@@ -1,9 +1,15 @@
+using TMPro;
 using UnityEngine;
 
 public class Vittoria : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _canzoneeNapoli; // Assegna la canzone nell'Inspector
+    [SerializeField] private TextMeshProUGUI _winText;
+    private bool win=false;
+    private float timer;
+    private bool _endGame = false;
+    private TextMeshProUGUI _timerText;
 
     void Awake()
     {
@@ -20,8 +26,10 @@ public class Vittoria : MonoBehaviour
 
     void OnTriggerEnter(Collider player) // Corretto il nome del metodo
     {
-        Debug.Log("Hai Vinto");
-        
+        win = true;
+        _winText.text = "HAI VINTO";
+        _winText.gameObject.SetActive(true);
+
         // Riproduci la canzone del Napoli
         if (_canzoneeNapoli != null && _audioSource != null)
         {
