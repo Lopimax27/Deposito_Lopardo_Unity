@@ -40,11 +40,4 @@ Sentiti libero di aprire **issues** per segnalare problemi o proporre nuove idee
 
 ---
 
-## 📄 Licenza
-
-Questo progetto è distribuito sotto licenza **MIT**.  
-Vedi il file `LICENSE` per maggiori dettagli.
-
----
-
 Buon allenamento e buon divertimento! 🐆💪
