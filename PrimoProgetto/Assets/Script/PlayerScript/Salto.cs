@@ -19,7 +19,7 @@ public class Salto : MonoBehaviour
     private void Jump()
     {
         _rigidBody.AddForce(Vector3.up * _jump, ForceMode.Impulse);
-
+        canJump = false;
     }
 
     private void CoolDownJump()

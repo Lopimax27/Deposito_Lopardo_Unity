@@ -9,7 +9,7 @@ public class Vittoria : MonoBehaviour
     private bool win=false;
     private float timer;
     private bool _endGame = false;
-    private TextMeshProUGUI _timerText;
+    [SerializeField] private TextMeshProUGUI _timerText;
 
     void Awake()
     {
@@ -24,11 +24,21 @@ public class Vittoria : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (!_endGame)
+        {
+            timer += Time.deltaTime;
+            _timerText.text = timer.ToString("F2");
+        }
+    }
+
     void OnTriggerEnter(Collider player) // Corretto il nome del metodo
     {
         win = true;
         _winText.text = "HAI VINTO";
         _winText.gameObject.SetActive(true);
+        _endGame = true;
 
         // Riproduci la canzone del Napoli
         if (_canzoneeNapoli != null && _audioSource != null)

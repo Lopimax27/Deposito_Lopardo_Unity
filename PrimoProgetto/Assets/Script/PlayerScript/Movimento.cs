@@ -6,7 +6,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private float _rotationSpeed; // Velocità di rotazione
     private float _rotationInput;
+    private float _defaultSpeed;
     private Vector3 _direction;
+
+    void Start()
+    {
+        _defaultSpeed = _speed;
+    }
 
     void Update()
     {
@@ -29,6 +35,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private void GetDirection()
     {
         _direction = Vector3.zero;
+        _speed = _defaultSpeed;
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -37,6 +44,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             _direction += -transform.forward;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            _speed *= 2;
         }
     }
 
